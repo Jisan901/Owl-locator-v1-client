@@ -55,6 +55,7 @@ axios.interceptors.response.use(function (response) {
     
     useEffect(() => {
         if (user) {
+            axios.defaults.headers.common['Authorization'] = `Bearer ${user.accessToken}`;
             axios.post('/auth/login',{},{
                 headers:{
                     Authorization:`Bearer ${user.accessToken}`
@@ -69,6 +70,9 @@ axios.interceptors.response.use(function (response) {
                 setLoading(false)
                 logOut()
             })
+        }
+        else{
+            axios.defaults.headers.common['Authorization'] = ``;
         }
         setLoading(false)
     }, [user]);

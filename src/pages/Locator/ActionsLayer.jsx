@@ -5,7 +5,7 @@ import{
     ViewfinderCircleIcon
     } from '@heroicons/react/24/outline';
 
-const locator = new Locator('Locator-1-1',5,true,true,99999);
+const locator = new Locator('Locator-1-1',5,false,true,99999);
 
 
 
